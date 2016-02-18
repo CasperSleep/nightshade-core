@@ -1,0 +1,13 @@
+{% from 'nightshade-styles/modules/buttons/macros.html' import button %}
+
+
+{% macro email_signup() %}
+<form action="#" class="email-signup-form js-email-signup-form" method="get" target="_blank">
+  <div class="form-input-group">
+    <input class="form-input email-signup-input js-email-signup-input" inputmode="email" name="EMAIL" placeholder="Enter your email" required="true" type="email" value="" x-inputmode="email">
+
+    {{ button('SUBMIT', 'secondary', type="submit", class="email-signup-submit") }}
+  </div>
+</form>
+<div class="email-signup-response-text js-email-signup-response-text"></div>
+{% endmacro %}
