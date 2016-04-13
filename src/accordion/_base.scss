@@ -1,0 +1,34 @@
+/**
+   * @file Accordion
+   * @module Accordion
+   * @overview
+   * @@@ todo: standardize height transition, also make proportional to max-height/media queries?
+ **/
+
+ .accordion {
+   > ul {
+     > li {
+       margin: ms(1) 0;
+     }
+   }
+ }
+
+ .accordion-section {
+  .accordion-section-toggle {
+    cursor: pointer;
+  }
+
+  ul {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+
+    &.open {
+      max-height: 1000px;
+
+      @include respond-at-and-above($break-medium) {
+        max-height: 500px;
+      }
+    }
+  }
+ }
