@@ -15,13 +15,12 @@ export const Accordion = {
    * @returns {void}
   */
   init() {
-    this.accordionSection  = document.querySelectorAll(this.accordionSection);
+    this.accordionSections  = document.querySelectorAll(this.accordionSection);
 
-    for (let i = 0; i < this.accordionSection.length; i++){
-      let trigger = this.accordionSection[i].querySelectorAll(this.accordionSectionTrigger);
+    [...this.accordionSections].forEach((el) => {
+      let trigger = el.querySelectorAll(this.accordionSectionTrigger);
       trigger = trigger[0];
-
-      let content = this.accordionSection[i].querySelectorAll(this.accordionSectionContent);
+      let content = el.querySelectorAll(this.accordionSectionContent);
       content = content[0];
 
       trigger.setAttribute(`touch-action`, `none`);
@@ -37,7 +36,7 @@ export const Accordion = {
           this.openAccordionSection(content);
         }
       });
-    }
+    });
   },
 
   /**

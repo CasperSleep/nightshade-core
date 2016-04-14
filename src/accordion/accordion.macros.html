@@ -1,5 +1,5 @@
 {#
-  * @overview Macros for Accordions.
+  * @overview Macros for Accordions
   * @module Accordion
   *
 #}
@@ -13,12 +13,12 @@
   * @param {string} [class] - Class name for style or JS targeting
   * @param {string} [id] - ID for JS targeting
 #}
-{% macro accordion_list(data, class=null, id=null) %}
+{% macro accordion_section(data, class=null, id=null) %}
 <div class="accordion-section js-accordion-section{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
   <h4 class="accordion-section-toggle js-accordion-section-toggle">{{ data.toggle_content }} {{ icon("arrow", size="tiny") }}</h4>
-  <ul class="js-accordion-section-content">
+  <ul class="accordion-section-list js-accordion-section-content">
   {% for item in data.list %}
-    <li>
+    <li class="accordion-section-list-item">
       {{ link(item.content, href=item.href) }}
     </li>
   {% endfor %}
@@ -40,10 +40,10 @@
     <h3>{{ accordion_title }}</h3>
   {% endif %}
 
-  <ul class="accordion-sections">
+  <ul class="accordion-list">
   {% for item in data.sections %}
-    <li>
-      {{ accordion_list(item) }}
+    <li class="accordion-list-item">
+      {{ accordion_section(item) }}
     </li>
   {% endfor %}
   </ul>
