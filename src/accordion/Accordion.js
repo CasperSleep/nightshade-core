@@ -15,25 +15,22 @@ export const Accordion = {
    * @returns {void}
   */
   init() {
-    this.accordionSections  = document.querySelectorAll(this.accordionSection);
+    const accordionSections  = document.querySelectorAll(this.accordionSection);
 
-    [...this.accordionSections].forEach((el) => {
-      let trigger = el.querySelectorAll(this.accordionSectionTrigger);
-      trigger = trigger[0];
-      let content = el.querySelectorAll(this.accordionSectionContent);
-      content = content[0];
+    [...accordionSections].forEach((el) => {
+      let trigger = el.querySelector(this.accordionSectionTrigger);
+      let content = el.querySelector(this.accordionSectionContent);
 
       trigger.setAttribute(`touch-action`, `none`);
       content.setAttribute(`aria-expanded`, false)
 
-      trigger.addEventListener('pointerup', (e) => {
+      trigger.addEventListener(`pointerup`, (e) => {
         e.stopPropagation();
 
         if (content.classList.contains(this.openClass)) {
-          this.closeAccordionSection(content);
-        }
-        else {
-          this.openAccordionSection(content);
+          this.closeAccordionSection(trigger, content);
+        } else {
+          this.openAccordionSection(trigger, content);
         }
       });
     });
@@ -43,17 +40,19 @@ export const Accordion = {
    * Opens the given Accordion section
    * @returns {void}
   */
-  openAccordionSection(section) {
+  openAccordionSection(trigger, section) {
     section.setAttribute(`aria-expanded`, true)
     section.classList.add(this.openClass);
+    trigger.classList.add(this.openClass);
   },
 
   /**
    * Closes the given Accordion section
    * @returns {void}
   */
-  closeAccordionSection(section) {
+  closeAccordionSection(trigger, section) {
     section.setAttribute(`aria-expanded`, false)
     section.classList.remove(this.openClass);
+    trigger.classList.remove(this.openClass);
   },
 };
