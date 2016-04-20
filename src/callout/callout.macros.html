@@ -5,13 +5,13 @@
 
 {#
   * Renders a Callout module with heading and layout content beneath
-  * @param {string} heading - Heading text content
+  * @param {string} [heading] - Heading text content
   * @param {string} [class] - Class name for style or JS targeting
   * @param {string} [id] - ID for JS targeting
 #}
-{% macro callout(heading, class=null, id=null) %}
+{% macro callout(heading=null, class=null, id=null) %}
 <div class="callout{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
-  <h2 class="callout-heading -dark">{{ heading }}</h2>
+  {% if heading %}<h2 class="callout-heading -dark">{{ heading }}</h2>{% endif %}
   {{ caller() }}
 </div>
 {% endmacro %}
