@@ -1,22 +1,40 @@
-import test from 'ava';
-import jsdom from 'jsdom';
+import { assert } from 'chai';
+import nunjucks from 'nunjucks';
+import Velocity from 'velocity-animate';
+
 import { Accordion } from './Accordion';
 
-import {env} from '../../nunjucks-helper.js';
+let accordion;
 
+describe('Accordion', () => {
+  before(() => {
+    fixture.setBase('src');
+  });
 
-test.beforeEach(() => {
-  global.document = jsdom.jsdom(env.render(`accordion/Accordion.test.html`));
-});
+  beforeEach(() => {
+    accordion = fixture.load('accordion/Accordion.test.html');
 
-// @todo: Write real tests
-test(`Can initialize Accordion`, t => {
-  Accordion.init(`#accordion`);
-  t.truthy(Accordion.accordion);
-  t.is(Accordion.transitionDuration, 300);
-});
+    document.body.insertAdjacentHTML('afterbegin', accordion);
+  });
 
-test(`Can initialize Accordion transitionDuration`, t => {
-  Accordion.init(`#accordion`, 100);
-  t.is(Accordion.transitionDuration, 100);
+  afterEach(() => {
+    //document.body.removeChild(document.getElementById('accordion'));
+  });
+
+  it('should initialize', () => {
+    Accordion.init('#accordion', 300);
+
+    assert.isDefined(Accordion.accordion);
+    assert.equal(Accordion.transitionDuration, 300);
+    assert.equal(Accordion.accordionSections.length, 2);
+  });
+
+  it('can open accordion section', () => {
+    let section = document.querySelector('.js-accordion-section');
+    let sectionContent = document.querySelector('.js-accordion-section-content');
+
+    Accordion.openAccordionSection(section, sectionContent);
+
+    assert.equal(section.getAttribute(`aria-expanded`), `true`);
+  });
 });
