@@ -6,9 +6,16 @@ import { Accordion } from './Accordion';
 
 let accordion;
 
+const isHidden = (el) => {
+  let style = window.getComputedStyle(el);
+
+  return (style.display === 'none');
+};
+
 describe('Accordion', () => {
   before(() => {
     fixture.setBase('src');
+
   });
 
   beforeEach(() => {
@@ -18,23 +25,56 @@ describe('Accordion', () => {
   });
 
   afterEach(() => {
-    //document.body.removeChild(document.getElementById('accordion'));
+    accordion = document.querySelector('#accordion');
+    accordion.parentNode.removeChild(accordion);
   });
 
   it('should initialize', () => {
-    Accordion.init('#accordion', 300);
+    Accordion.init('#accordion');
 
     assert.isDefined(Accordion.accordion);
     assert.equal(Accordion.transitionDuration, 300);
-    assert.equal(Accordion.accordionSections.length, 2);
+  });
+
+  it('should initialize with custom transitionDuration', () => {
+    Accordion.init('#accordion', 100);
+
+    assert.equal(Accordion.transitionDuration, 100);
+  })
+
+  it('should initialize with visible sectionContent', () => {
+    Accordion.init('#accordion');
+
+    const sectionContents = document.querySelectorAll('.js-accordion-section-content');
+
+    for (var i = 0; i < sectionContents.length; i++) {
+      assert.isFalse(isHidden(sectionContents[i]));
+    }
+  });
+
+  it('can close accordion section', () => {
+    Accordion.init('#accordion', 0);
+
+    let section = document.querySelector('.js-accordion-section');
+    let sectionContent = document.querySelector('.js-accordion-section-content');
+
+    Accordion.closeAccordionSection(section, sectionContent);
+
+    setTimeout(() => {
+      assert.isFalse(isHidden(sectionContent));
+    }, 0);
   });
 
   it('can open accordion section', () => {
+    Accordion.init('#accordion', 0);
+
     let section = document.querySelector('.js-accordion-section');
     let sectionContent = document.querySelector('.js-accordion-section-content');
 
     Accordion.openAccordionSection(section, sectionContent);
 
-    assert.equal(section.getAttribute(`aria-expanded`), `true`);
+    setTimeout(() => {
+      assert.isTrue(isHidden(sectionContent));
+    }, 0);
   });
 });
