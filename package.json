@@ -4,7 +4,8 @@
   "description": "Casper pattern and style scss library. Under development.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "eslint": "eslint src"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,11 @@
     "accoutrement-color": "^1.0.3",
     "eslint": "^2.9.0",
     "susy": "^2.2.12"
-  }
+  },
+  "devDependencies": {
+    "pre-commit": "^1.1.2"
+  },
+  "pre-commit": [
+    "eslint"
+  ]
 }
