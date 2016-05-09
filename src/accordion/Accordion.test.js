@@ -52,7 +52,7 @@ describe('Accordion', () => {
     }
   });
 
-  it('can toggle accordion section', () => {
+  it('can toggle accordion section', (done) => {
     Accordion.init('#accordion', 0);
 
     let section = document.querySelector('.js-accordion-section');
@@ -63,13 +63,15 @@ describe('Accordion', () => {
 
     setTimeout(() => {
       assert.isFalse(isHidden(sectionContent));
+      done();
     }, 0);
 
     // open the accordion
     Accordion.toggleAccordionSection(section, sectionContent);
 
     setTimeout(() => {
-      assert.isTrue(isHidden(sectionContent));
+      assert.isFalse(isHidden(sectionContent));
+      done();
     }, 0);
   });
 });
