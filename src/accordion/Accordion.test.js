@@ -52,26 +52,21 @@ describe('Accordion', () => {
     }
   });
 
-  it('can close accordion section', () => {
+  it('can toggle accordion section', () => {
     Accordion.init('#accordion', 0);
 
     let section = document.querySelector('.js-accordion-section');
     let sectionContent = document.querySelector('.js-accordion-section-content');
 
-    Accordion.closeAccordionSection(section, sectionContent);
+    // close the accordion
+    Accordion.toggleAccordionSection(section, sectionContent);
 
     setTimeout(() => {
       assert.isFalse(isHidden(sectionContent));
     }, 0);
-  });
 
-  it('can open accordion section', () => {
-    Accordion.init('#accordion', 0);
-
-    let section = document.querySelector('.js-accordion-section');
-    let sectionContent = document.querySelector('.js-accordion-section-content');
-
-    Accordion.openAccordionSection(section, sectionContent);
+    // open the accordion
+    Accordion.toggleAccordionSection(section, sectionContent);
 
     setTimeout(() => {
       assert.isTrue(isHidden(sectionContent));
