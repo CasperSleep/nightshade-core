@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import assert from 'assert';
 import nunjucks from 'nunjucks';
 import Velocity from 'velocity-animate';
 
@@ -32,7 +32,7 @@ describe('Accordion', () => {
   it('should initialize', () => {
     Accordion.init('#accordion');
 
-    assert.isDefined(Accordion.accordion);
+    assert(Accordion.accordion);
     assert.equal(Accordion.transitionDuration, 300);
   });
 
@@ -48,7 +48,7 @@ describe('Accordion', () => {
     const sectionContents = document.querySelectorAll('.js-accordion-section-content');
 
     for (var i = 0; i < sectionContents.length; i++) {
-      assert.isFalse(isHidden(sectionContents[i]));
+      assert(!isHidden(sectionContents[i]));
     }
   });
 
@@ -62,7 +62,7 @@ describe('Accordion', () => {
     Accordion.toggleAccordionSection(section, sectionContent);
 
     setTimeout(() => {
-      assert.isFalse(isHidden(sectionContent));
+      assert(!isHidden(sectionContent));
       done();
     }, 0);
 
@@ -70,7 +70,7 @@ describe('Accordion', () => {
     Accordion.toggleAccordionSection(section, sectionContent);
 
     setTimeout(() => {
-      assert.isFalse(isHidden(sectionContent));
+      assert(isHidden(sectionContent));
       done();
     }, 0);
   });

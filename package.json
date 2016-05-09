@@ -23,13 +23,13 @@
     "susy": "^2.2.12"
   },
   "devDependencies": {
+    "assert": "^1.3.0",
     "babel-polyfill": "^6.8.0",
     "babel-preset-es2015": "^6.6.0",
     "babelify": "^7.3.0",
     "browserify": "^13.0.1",
     "browserify-babel-istanbul": "^0.4.0",
     "browserify-istanbul": "^2.0.0",
-    "chai": "^3.5.0",
     "codecov.io": "^0.1.6",
     "eslint": "^2.9.0",
     "jsdom": "^8.5.0",
@@ -43,7 +43,6 @@
     "karma-mocha": "^1.0.1",
     "karma-mocha-reporter": "^2.0.3",
     "karma-phantomjs-launcher": "^1.0.0",
-    "karma-sinon-chai": "^1.2.0",
     "lolex": "^1.4.0",
     "mocha": "^2.4.5",
     "nodemon": "^1.9.2",
@@ -52,7 +51,6 @@
     "phantomjs-prebuilt": "^2.1.7",
     "pre-commit": "^1.1.2",
     "sinon": "^1.17.4",
-    "sinon-chai": "^2.8.0",
     "velocity-animate": "^1.2.3",
     "watchify": "^3.7.0"
   },
