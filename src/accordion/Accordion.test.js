@@ -1,8 +1,8 @@
 import assert from 'assert';
-import nunjucks from 'nunjucks';
-import Velocity from 'velocity-animate';
 
 import { Accordion } from './Accordion';
+
+import { env } from '../../nunjucks-helper.js';
 
 let accordion;
 
@@ -19,7 +19,9 @@ describe('Accordion', () => {
   });
 
   beforeEach(() => {
-    accordion = fixture.load('accordion/Accordion.test.html');
+    console.log(env.render('accordion/Accordion.test.html'));
+    //accordion = fixture.load(env.render('accordion/Accordion.test.html'));
+    //console.log(accordion);
 
     document.body.insertAdjacentHTML('afterbegin', accordion);
   });
