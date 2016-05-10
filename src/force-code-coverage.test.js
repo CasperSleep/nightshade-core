@@ -5,10 +5,10 @@ import { resolve } from 'path';
 import glob from 'glob';
 
 const badPaths = [
-  '.test.js'
+  `.test.js`,
 ];
 
-const globToCover = resolve(__dirname, '**/*.js');
+const globToCover = resolve(__dirname, `**/*.js`);
 
 const filesToCover = glob.sync(globToCover).filter((filePath) => {
   return badPaths.every((file) => !filePath.includes(file));
@@ -22,6 +22,6 @@ filesToCover.forEach((file) => {
   }
 });
 
-test('covered files', t => {
+test(`covered files`, t => {
   t.true(filesToCover.length > 0);
 });
