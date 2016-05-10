@@ -33,6 +33,8 @@ export const Accordion = {
       trigger.addEventListener(`pointerup`, (e) => {
         e.stopPropagation();
 
+        const sectionContent = el.querySelector(this.accordionSectionContent);
+
         this.toggleAccordionSection(el, sectionContent);
       });
     });
@@ -65,6 +67,7 @@ export const Accordion = {
   /**
    * Toggles the given Accordion section
    * @param {object} section DOM element to toggle state class on
+   * @param {object} sectionContent DOM element to toggle animation on
    * @returns {void}
   */
   toggleAccordionSection(section, sectionContent) {
