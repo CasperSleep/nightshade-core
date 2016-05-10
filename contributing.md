@@ -14,6 +14,36 @@ We think it's best for the project if the code you write looks like the code the
 - Add a label to your PR
 - Once your PR is merged, update the version, create a tag, and write a release.
 
+## Testing
+
+To run the unit tests:
+
+```sh
+npm run test
+```
+
+Now, you can go to `coverage/index.html` for in-depth code coverage info!
+
+To continuously run the unit tests as you develop:
+
+```sh
+npm run test:watch
+```
+
+## Code Coverage
+
+To check JavaScript code coverage:
+
+```sh
+npm run cover
+```
+
+To continuously check code coverage as you develop:
+
+```sh
+npm run cover:watch
+```
+
 ### Labels
 
 We use labels to help tag the state of a PR.

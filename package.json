@@ -5,7 +5,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postversion": "git push && git push --tags",
-    "eslint": "eslint src"
+    "eslint": "eslint src",
+    "cover": "nyc npm run test",
+    "cover:watch": "nodemon --quiet --watch src --exec npm run cover -s",
+    "test": "ava \"src/**/*.test.js\" --verbose",
+    "test:watch": "npm run test -- --watch",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -21,12 +26,37 @@
     "@casper/nightshade-icons": "github:caspersleep/nightshade-icons",
     "accoutrement-color": "^1.0.3",
     "eslint": "^2.9.0",
-    "susy": "^2.2.12"
+    "susy": "^2.2.12",
+    "ava": "^0.14.0",
+    "jsdom": "^8.5.0",
+    "nodemon": "^1.9.2",
+    "nunjucks": "^2.4.2",
+    "nyc": "^6.4.2"
   },
   "devDependencies": {
     "pre-commit": "^1.1.2"
   },
   "pre-commit": [
     "eslint"
-  ]
+  ],
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "nyc": {
+    "exclude": [
+      "src/**.test.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text",
+      "html"
+    ]
+  }
 }
