@@ -25,14 +25,13 @@ export const Accordion = {
 
     [...this.accordionSections].forEach((el) => {
       const trigger = el.querySelector(this.accordionSectionTrigger);
+      const sectionContent = el.querySelector(this.accordionSectionContent);
 
       trigger.setAttribute(`touch-action`, `none`);
       el.setAttribute(`aria-expanded`, false);
 
       trigger.addEventListener(`pointerup`, (e) => {
         e.stopPropagation();
-
-        const sectionContent = el.querySelector(this.accordionSectionContent);
 
         this.toggleAccordionSection(el, sectionContent);
       });

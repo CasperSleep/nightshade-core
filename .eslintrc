@@ -20,7 +20,8 @@
     // Revisit
     "Modernizr": false,
     "google": false,
-    "Spree": false
+    "Spree": false,
+    "fixture": false
   },
   "ecmaFeatures": {
     "modules": true
