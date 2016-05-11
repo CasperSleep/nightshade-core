@@ -2,10 +2,6 @@ import assert from 'assert';
 
 import { Accordion } from './Accordion';
 
-// import { env } from '../../nunjucks-helper.js';
-
-let accordion;
-
 const isHidden = (el) => {
   const style = window.getComputedStyle(el);
 
@@ -13,18 +9,14 @@ const isHidden = (el) => {
 };
 
 describe(`Accordion`, () => {
-  before(() => {
-    fixture.setBase(`src`);
-  });
-
   beforeEach(() => {
-    accordion = fixture.load(`accordion/Accordion.test.html`);
+    const template = nunjucks.render(`accordion/Accordion.test.html`);
 
-    document.body.insertAdjacentHTML(`afterbegin`, accordion);
+    document.body.insertAdjacentHTML(`afterbegin`, template);
   });
 
   afterEach(() => {
-    accordion = document.querySelector(`#accordion`);
+    const accordion = document.querySelector(`#accordion`);
     accordion.parentNode.removeChild(accordion);
   });
 
