@@ -5,7 +5,6 @@
   "scripts": {
     "eslint": "eslint src",
     "test": "./node_modules/.bin/nunjucks-precompile src > precompiled-templates.js && ./node_modules/karma/bin/karma start karma.conf.js",
-    "eslint": "eslint src",
     "postversion": "git push && git push --tags"
   },
   "repository": {
@@ -47,7 +46,6 @@
     "nodemon": "^1.9.2",
     "phantomjs-prebuilt": "^2.1.7",
     "pre-commit": "^1.1.2",
-    "sinon": "^1.17.4",
     "velocity-animate": "^1.2.3",
     "watchify": "^3.7.0"
   },
