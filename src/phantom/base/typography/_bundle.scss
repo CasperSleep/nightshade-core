@@ -2,4 +2,15 @@
 @import "links_config";
 @import "lists_config";
 @import "paragraphs_config";
-@import "../../../typography/load_fonts";
+
+@font-face {
+  font-family: "Calibre Light";
+  src: url('https://casper.com/static-assets/nightshade-core/src/typography/fonts/CalibreWeb-Light.woff2') format('woff2'),
+       url('https://casper.com/static-assets/nightshade-core/src/typography/fonts/CalibreWeb-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: "Calibre Medium";
+  src: url('https://casper.com/static-assets/nightshade-core/src/typography/fonts/CalibreWeb-Medium.woff2') format('woff2'),
+       url('https://casper.com/static-assets/nightshade-core/src/typography/fonts/CalibreWeb-Medium.woff') format('woff');
+}
