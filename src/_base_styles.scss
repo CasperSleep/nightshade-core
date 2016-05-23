@@ -3,9 +3,12 @@
  * @overview Site scaffolding and helper classes that generate output
  */
 
-// Third party
+// Third party dependency that needs to load immediately after _core_imports
 @import './node_modules/normalize.scss/normalize';
 
+// Ordered imports
+// @todo See about alphabetizing/extending comments to include more information
+// on why each partial appears in said order
 @import 'typography/index';
 @import 'layout/grids';
 @import 'animation/custom_animations';
