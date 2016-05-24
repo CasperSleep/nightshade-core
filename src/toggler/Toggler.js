@@ -3,7 +3,7 @@
  * @module Toggler.js
 */
 
-import feature from 'feature.js';
+import feature from 'viljamis/feature.js';
 
 export const Toggler = {
   /**
