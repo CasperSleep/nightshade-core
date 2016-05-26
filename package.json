@@ -4,6 +4,7 @@
   "description": "Casper pattern and style scss library. Under development.",
   "scripts": {
     "eslint": "eslint src",
+    "sasslint": "sass-lint -v -q",
     "test": "./node_modules/.bin/nunjucks-precompile src > precompiled-templates.js && ./node_modules/karma/bin/karma start karma.conf.js",
     "postversion": "git push && git push --tags"
   },
@@ -50,11 +51,13 @@
     "nodemon": "^1.9.2",
     "phantomjs-prebuilt": "^2.1.7",
     "pre-commit": "^1.1.2",
+    "sass-lint": "^1.7.0",
     "velocity-animate": "^1.2.3",
     "watchify": "^3.7.0"
   },
   "pre-commit": [
-    "eslint"
+    "eslint",
+    "sasslint"
   ],
   "babel": {
     "presets": [
