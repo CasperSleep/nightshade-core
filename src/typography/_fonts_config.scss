@@ -7,41 +7,62 @@
  * @todo Create a mixin for fonts. https://trello.com/c/pjMl9MoQ
  */
 
+$calibre-thin: "Calibre Thin";
 $calibre-light: "Calibre Light";
 $calibre-medium: "Calibre Medium";
-$verlag: "Verlag A", "Verlag B";
-$chronicle-deck: "Chronicle Deck A", "Chronicle Deck B";
+$verlag-black: "Verlag Black";
+$chronicle-deck: "Chronicle Deck";
+$chronicle-deck-italic: "Chronicle Deck Italic";
 
 $sans-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif-stack: Georgia, serif;
+
+@mixin calibre-thin {
+  font-family: $sans-stack;
+  font-weight: 400;
+  font-style: normal;
+
+  .fonts-1 & {
+    font-family: $calibre-light;
+  }
+
+  .fonts-2 & {
+    font-family: $calibre-thin;
+  }
+}
 
 @mixin calibre-light {
   font-family: $sans-stack;
   font-weight: 400;
   font-style: normal;
 
-  .wf-active & {
+  .fonts-1 & {
     font-family: $calibre-light;
   }
 }
 
 @mixin calibre-medium {
  font-family: $sans-stack;
- font-weight: 400;
+ font-weight: bold;
  font-style: normal;
 
- .wf-active & {
+ .fonts-1 & {
+   font-family: $calibre-light;
+ }
+
+ .fonts-2 & {
    font-family: $calibre-medium;
+   font-weight: 400;
  }
 }
 
 @mixin verlag-black {
   font-family: $sans-stack;
-  font-weight: 800;
-  font-style: normal;
+  font-weight: bold;
 
-  .wf-active & {
-   font-family: $verlag;
+  .fonts-2 & {
+    font-family: $verlag-black;
+    font-weight: 400;
   }
 }
 
@@ -50,9 +71,9 @@ $serif-stack: Georgia, serif;
  font-weight: 400;
  font-style: normal;
 
- .wf-active & {
-   font-family: $chronicle-deck;
- }
+  .fonts-2 & {
+    font-family: $chronicle-deck;
+  }
 }
 
 @mixin chronicle-italic {
@@ -60,7 +81,8 @@ $serif-stack: Georgia, serif;
  font-weight: 400;
  font-style: italic;
 
- .wf-active & {
-   font-family: $chronicle-deck;
- }
+  .fonts-2 & {
+    font-family: $chronicle-deck-italic;
+    font-style: normal;
+  }
 }

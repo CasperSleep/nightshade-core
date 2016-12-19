@@ -6,6 +6,12 @@
  */
 
 @font-face {
+  font-family: "Calibre Thin";
+  src: url('https://s3.amazonaws.com/nightshade-fonts/CalibreThin.woff2') format('woff2'),
+       url('https://s3.amazonaws.com/nightshade-fonts/CalibreThin.woff') format('woff');
+}
+
+@font-face {
   font-family: "Calibre Light";
   src: url('https://s3.amazonaws.com/nightshade-fonts/CalibreWeb-Light.woff2') format('woff2'),
        url('https://s3.amazonaws.com/nightshade-fonts/CalibreWeb-Light.woff') format('woff');
@@ -15,4 +21,22 @@
   font-family: "Calibre Medium";
   src: url('https://s3.amazonaws.com/nightshade-fonts/CalibreWeb-Medium.woff2') format('woff2'),
        url('https://s3.amazonaws.com/nightshade-fonts/CalibreWeb-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: "Verlag Black";
+  src: url('https://s3.amazonaws.com/nightshade-fonts/VerlagBlack.woff2') format('woff2'),
+       url('https://s3.amazonaws.com/nightshade-fonts/VerlagBlack.woff') format('woff');
+}
+
+@font-face {
+  font-family: "Chronicle Deck";
+  src: url('https://s3.amazonaws.com/nightshade-fonts/ChronicleDeck.woff2') format('woff2'),
+       url('https://s3.amazonaws.com/nightshade-fonts/ChronicleDeck.woff') format('woff');
+}
+
+@font-face {
+  font-family: "Chronicle Deck Italic";
+  src: url('https://s3.amazonaws.com/nightshade-fonts/ChronicleDeckItalic.woff2') format('woff2'),
+       url('https://s3.amazonaws.com/nightshade-fonts/ChronicleDeckItalic.woff') format('woff');
 }
