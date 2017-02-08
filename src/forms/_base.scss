@@ -478,27 +478,6 @@ label.has-errors {
   color: color(accent);
 }
 
-// Form button states
-form {
-  .btn--primary {
-    &:focus {
-      box-shadow: 0px 0px 0px 2px mix(color(background), color(primary), 70%);
-    }
-  }
-
-  .btn--secondary {
-    &:focus {
-      box-shadow: 0px 0px 0px 2px mix(color(background), color(primary), 20%);
-    }
-  }
-
-  .btn--accent {
-    &:focus {
-      box-shadow: 0px 0px 0px 2px mix(color(background), color(accent), 70%);
-    }
-  }
-}
-
 // Inline validation error
 .form-inline-error {
   position: absolute;
