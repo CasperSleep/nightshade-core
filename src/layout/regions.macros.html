@@ -186,7 +186,7 @@
         <ul class="nav-main-group nav-main-group--user">
           <li role="presentation">
             <span class="phone-number js-a-sup-phone">
-              <a class="nav-item" data-track-click-target="phone" href="tel:1{{ phone_number|replace('-', '') }}">
+              <a class="nav-item" data-track-click-target="phone" href="tel:{{ phone_number|replace('-', '') }}">
                 {{ icon.icon("phone")}}
                 {{ phone_number }}
               </a>
