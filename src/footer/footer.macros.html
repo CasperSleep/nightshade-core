@@ -32,7 +32,7 @@
 
       {% if not simple %}
       <div class="footer-nav-group footer-nav-group--right">
-        <a class="footer-nav-group-link footer-nav-group-link--contact footer-nav-group-link--contact-phone" href="tel:1{{ phone_number|replace('-', '') }}">
+        <a class="footer-nav-group-link footer-nav-group-link--contact footer-nav-group-link--contact-phone" href="tel:{{ phone_number|replace('-', '') }}">
           {{ icon('phone', size='x-small') }}
           <span class="footer-nav-group-text--bottom footer-nav-group-text--contact">{{ phone_number }}</span>
         </a>
