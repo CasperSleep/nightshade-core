@@ -1,6 +1,6 @@
 {
   "name": "@casper/nightshade-core",
-  "version": "2.19.1",
+  "version": "2.19.2",
   "description": "Casper pattern and style scss library. Under development.",
   "scripts": {
     "eslint": "./node_modules/.bin/eslint src",
@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/CasperSleep/nightshade-core#readme",
   "dependencies": {
-    "@casper/nightshade-icons": "github:caspersleep/nightshade-icons",
+    "@casper/nightshade-icons": "git+ssh://git@github.com/CasperSleep/nightshade-icons.git",
     "accoutrement-color": "^1.0.3",
     "flickity": "^2.0.5",
     "imgix.js": "^2.2.4",
