@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/CasperSleep/nightshade-core#readme",
   "dependencies": {
-    "@casper/nightshade-icons": "git+ssh://git@github.com/CasperSleep/nightshade-icons.git",
+    "@casper/nightshade-icons": "git+https://git@github.com/CasperSleep/nightshade-icons.git",
     "accoutrement-color": "^1.0.3",
     "flickity": "^2.0.5",
     "imgix.js": "^2.2.4",
